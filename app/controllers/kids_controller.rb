@@ -49,7 +49,7 @@ class KidsController < ApplicationController
         ActiveModelSerializers::Deserialization
             .jsonapi_parse(
                 params, only: [
-                    :balance, :autopay
+                    :balance, :autopay, :default_method
                 ]
             )
     end

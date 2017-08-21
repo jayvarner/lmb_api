@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170820031903) do
+ActiveRecord::Schema.define(version: 20170820221650) do
+
+  create_table "brestrictions", force: :cascade do |t|
+    t.string "name"
+    t.boolean "active"
+    t.integer "kid_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["kid_id"], name: "index_brestrictions_on_kid_id"
+  end
+
+  create_table "hrestrictions", force: :cascade do |t|
+    t.string "name"
+    t.boolean "active"
+    t.integer "kid_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["kid_id"], name: "index_hrestrictions_on_kid_id"
+  end
 
   create_table "kids", force: :cascade do |t|
     t.string "name"
@@ -46,6 +64,12 @@ ActiveRecord::Schema.define(version: 20170820031903) do
     t.integer "date_month"
     t.integer "cvv"
     t.integer "routing"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "restrictions", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

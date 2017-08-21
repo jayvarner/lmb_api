@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :hrestrictions
+  resources :brestrictions
+  resources :restrictions
   resources :lunches
   resources :payment_methods, path: 'payment-methods'
   resources :kids
